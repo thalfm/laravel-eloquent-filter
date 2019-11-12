@@ -1,6 +1,6 @@
 <?php
 
-namespace Mnabialek\LaravelEloquentFilter\Tests;
+namespace Thalfm\LaravelEloquentFilter\Tests;
 
 use Mockery as m;
 

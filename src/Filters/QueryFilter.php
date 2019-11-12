@@ -1,14 +1,15 @@
 <?php
 
-namespace Mnabialek\LaravelEloquentFilter\Filters;
+namespace Thalfm\LaravelEloquentFilter\Filters;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Contracts\Container\Container;
-use Mnabialek\LaravelEloquentFilter\Contracts\Sort;
-use Mnabialek\LaravelEloquentFilter\Contracts\Filter;
-use Mnabialek\LaravelEloquentFilter\Contracts\InputParser;
-use Mnabialek\LaravelEloquentFilter\Contracts\QueryFilter as QueryFilterContract;
+use Illuminate\Support\Str;
+use Thalfm\LaravelEloquentFilter\Contracts\Sort;
+use Thalfm\LaravelEloquentFilter\Contracts\Filter;
+use Thalfm\LaravelEloquentFilter\Contracts\InputParser;
+use Thalfm\LaravelEloquentFilter\Contracts\QueryFilter as QueryFilterContract;
 
 abstract class QueryFilter implements QueryFilterContract
 {
@@ -159,7 +160,7 @@ abstract class QueryFilter implements QueryFilterContract
      */
     protected function getFilterMethod($field)
     {
-        return 'apply' . studly_case(str_replace('.', ' ', $field));
+        return 'apply' . Str::studly(str_replace('.', ' ', $field));
     }
 
     /**
@@ -171,7 +172,7 @@ abstract class QueryFilter implements QueryFilterContract
      */
     protected function getSortMethod($field)
     {
-        return 'applySort' . studly_case(str_replace('.', ' ', $field));
+        return 'applySort' . Str::studly(str_replace('.', ' ', $field));
     }
 
     /**

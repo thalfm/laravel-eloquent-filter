@@ -1,12 +1,13 @@
 <?php
 
-namespace Mnabialek\LaravelEloquentFilter\Parsers;
+namespace Thalfm\LaravelEloquentFilter\Parsers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Mnabialek\LaravelEloquentFilter\Objects\Sort;
-use Mnabialek\LaravelEloquentFilter\Objects\Filter;
-use Mnabialek\LaravelEloquentFilter\Contracts\InputParser;
+use Illuminate\Support\Str;
+use Thalfm\LaravelEloquentFilter\Objects\Sort;
+use Thalfm\LaravelEloquentFilter\Objects\Filter;
+use Thalfm\LaravelEloquentFilter\Contracts\InputParser;
 
 class SimpleQueryParser implements InputParser
 {
@@ -109,7 +110,7 @@ class SimpleQueryParser implements InputParser
             $s = new Sort();
             $order = 'ASC';
 
-            if (starts_with($field, $this->sortDescSign)) {
+            if (Str::startsWith($field, $this->sortDescSign)) {
                 $order = 'DESC';
                 $field = mb_substr($field, mb_strlen($this->sortDescSign));
             }

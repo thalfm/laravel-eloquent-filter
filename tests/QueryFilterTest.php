@@ -1,11 +1,11 @@
 <?php
 
-namespace Mnabialek\LaravelEloquentFilter\Tests;
+namespace Thalfm\LaravelEloquentFilter\Tests;
 
 use Mockery as m;
-use Mnabialek\LaravelEloquentFilter\Objects\Sort;
-use Mnabialek\LaravelEloquentFilter\Objects\Filter;
-use Mnabialek\LaravelEloquentFilter\Filters\QueryFilter;
+use Thalfm\LaravelEloquentFilter\Objects\Sort;
+use Thalfm\LaravelEloquentFilter\Objects\Filter;
+use Thalfm\LaravelEloquentFilter\Filters\QueryFilter;
 
 class QueryFilterTest extends UnitTestCase
 {
@@ -170,7 +170,7 @@ class QueryFilterTest extends UnitTestCase
     protected function setMocks()
     {
         $this->parser =
-            m::mock('Mnabialek\LaravelEloquentFilter\Contracts\InputParser');
+            m::mock('Thalfm\LaravelEloquentFilter\Contracts\InputParser');
         $this->app = m::mock('Illuminate\Contracts\Container\Container');
         $this->query = m::mock('Illuminate\Database\Eloquent\Builder');
     }

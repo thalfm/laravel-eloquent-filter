@@ -1,9 +1,9 @@
 <?php
 
-namespace Mnabialek\LaravelEloquentFilter\Traits;
+namespace Thalfm\LaravelEloquentFilter\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
-use Mnabialek\LaravelEloquentFilter\Contracts\QueryFilter;
+use Thalfm\LaravelEloquentFilter\Contracts\QueryFilter;
 
 trait Filterable
 {

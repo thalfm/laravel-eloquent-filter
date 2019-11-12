@@ -1,0 +1,19 @@
+version: "3.2"
+services:
+  php-eloquent-filter:
+    container_name: php_eloquent-filter
+    image: php:7.3-eloquent-filter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 6000:80
+    working_dir: /app
+    networks:
+      - eloquent-filter-network
+    hostname: eloquent-filter
+networks:
+  eloquent-filter-network:
+    driver: bridge

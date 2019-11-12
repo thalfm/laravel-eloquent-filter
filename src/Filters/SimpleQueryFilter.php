@@ -1,10 +1,10 @@
 <?php
 
-namespace Mnabialek\LaravelEloquentFilter\Filters;
+namespace Thalfm\LaravelEloquentFilter\Filters;
 
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Container\Container;
-use Mnabialek\LaravelEloquentFilter\Parsers\SimpleQueryParser;
+use Thalfm\LaravelEloquentFilter\Parsers\SimpleQueryParser;
 
 abstract class SimpleQueryFilter extends QueryFilter
 {

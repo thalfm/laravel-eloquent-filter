@@ -1,18 +1,12 @@
 # Laravel Eloquent Filter
 
-[![Build Status](https://travis-ci.org/mnabialek/laravel-eloquent-filter.svg?branch=master)](https://travis-ci.org/mnabialek/laravel-eloquent-filter)
-[![Coverage Status](https://coveralls.io/repos/github/mnabialek/laravel-eloquent-filter/badge.svg)](https://coveralls.io/github/mnabialek/laravel-eloquent-filter)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mnabialek/laravel-eloquent-filter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mnabialek/laravel-eloquent-filter/badges/quality-score.png?b=master)
-[![StyleCI](https://styleci.io/repos/60950927/shield?style=flat&branch=master)](https://styleci.io/repos/60950927)
-![Packagist](https://img.shields.io/packagist/dt/mnabialek/laravel-eloquent-filter.svg)
-
 This module lets you filter Eloquent data using query filters. You can apply WHERE filters and also set order of results
 
 ## Installation
 
 1. Run
    ```php   
-   composer require mnabialek/laravel-eloquent-filter
+   composer require thalfm/laravel-eloquent-filter
    ```     
    in console to install this module
    
@@ -23,7 +17,7 @@ This module lets you filter Eloquent data using query filters. You can apply WHE
 Let's assume you want to allow to filter users data. By default you use `User` Eloquent model to get users. To enable filtering, open User model (by default `app/User.php` file) and add into it the following trait:
 
 ```php
-use \Mnabialek\LaravelEloquentFilter\Traits\Filterable;
+use \Thalfm\LaravelEloquentFilter\Traits\Filterable;
 ```
    
 just bellow opening class definition, so it should look something like this:
@@ -31,17 +25,17 @@ just bellow opening class definition, so it should look something like this:
 ```php
 class User extends Authenticatable
 {
-    use \Mnabialek\LaravelEloquentFilter\Traits\Filterable;
+    use \Thalfm\LaravelEloquentFilter\Traits\Filterable;
 ```    
 
-To allow filtering for this class, you need to also create implementation of `Mnabialek\LaravelEloquentFilter\Contracts\QueryFilter` interface. To do that create min `app/Filters` directory file with the following content:
+To allow filtering for this class, you need to also create implementation of `Thalfm\LaravelEloquentFilter\Contracts\QueryFilter` interface. To do that create min `app/Filters` directory file with the following content:
 
 ```php
 <?php
 
 namespace App\Filters;
 
-use Mnabialek\LaravelEloquentFilter\Filters\SimpleQueryFilter;
+use Thalfm\LaravelEloquentFilter\Filters\SimpleQueryFilter;
 
 class UserFilter extends SimpleQueryFilter
 {
@@ -108,9 +102,9 @@ You can also implement default filters and default sorting implementing `applyDe
 
 ## Customization
 
-Although this module provides some default implementations, you can create your own. You can change they way data is passed to QueryFilter. By default `SimpleQueryParser` is used that parses Request input in very basic way. However you might want to create your own implementation of `Mnabialek\LaravelEloquentFilter\Contracts\InputParser` to fully adjust it to your needs. 
+Although this module provides some default implementations, you can create your own. You can change they way data is passed to QueryFilter. By default `SimpleQueryParser` is used that parses Request input in very basic way. However you might want to create your own implementation of `Thalfm\LaravelEloquentFilter\Contracts\InputParser` to fully adjust it to your needs. 
 
-You might also change they way filters and sorts are applied to query. To do this, you need to create your own implementation of `Mnabialek\LaravelEloquentFilter\Contracts\QueryFilter` but again default implementation was given.
+You might also change they way filters and sorts are applied to query. To do this, you need to create your own implementation of `Thalfm\LaravelEloquentFilter\Contracts\QueryFilter` but again default implementation was given.
  
 In case you want to only create implementation of QueryFilter, it might be convenient to create custom filter class, that will pass this specific QueryFilter implementation to QueryFilter instead of creating your own constructor in multiple filters classes. You can look at `SimpleQueryFilter` which does it for `SimpleQueryParser` to remove need of defining this constructor over and over in multiple filter classes (assuming you want to use SimpleQueryParser for them).     
 

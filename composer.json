@@ -1,8 +1,8 @@
 {
-    "name": "mnabialek/laravel-eloquent-filter",
+    "name": "thalfm/laravel-eloquent-filter",
     "description": "Allows filtering Eloquent queries by input filters",
     "require": {
-        "laravel/framework": "5.*"
+        "laravel/framework": "6.*"
     },
     "keywords": [
         "laravel",
@@ -14,18 +14,18 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Marcin Nabiałek",
-            "email": "dev@nabialek.org"
+            "name": "Thales Farias Martins",
+            "email": "thalfm@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Mnabialek\\LaravelEloquentFilter\\": "src/"
+            "Thalfm\\LaravelEloquentFilter\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mnabialek\\LaravelEloquentFilter\\Tests\\": "tests"
+            "Thalfm\\LaravelEloquentFilter\\Tests\\": "tests"
         }
     },    
     "require-dev": {

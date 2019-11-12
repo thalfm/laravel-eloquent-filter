@@ -1,8 +1,8 @@
 <?php
 
-namespace Mnabialek\LaravelEloquentFilter\Objects;
+namespace Thalfm\LaravelEloquentFilter\Objects;
 
-use Mnabialek\LaravelEloquentFilter\Contracts\Sort as SortContract;
+use Thalfm\LaravelEloquentFilter\Contracts\Sort as SortContract;
 
 class Sort implements SortContract
 {

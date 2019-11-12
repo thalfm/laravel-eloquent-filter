@@ -1,8 +1,8 @@
 <?php
 
-namespace Mnabialek\LaravelEloquentFilter\Objects;
+namespace Thalfm\LaravelEloquentFilter\Objects;
 
-use Mnabialek\LaravelEloquentFilter\Contracts\Filter as FilterContract;
+use Thalfm\LaravelEloquentFilter\Contracts\Filter as FilterContract;
 
 class Filter implements FilterContract
 {
